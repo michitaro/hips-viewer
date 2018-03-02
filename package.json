@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev-server": "webpack-dev-server --hot --progress --mode development",
-    "build": "webpack-dev-server --mode production --hot --progress"
+    "build": "webpack-dev-server --mode production --hot --progress",
+    "gh-pages": "rm -rf dist ; npm run build ; gh-pages -d dist"
   },
   "dependencies": {
     "@hscmap/assets-installer-plugin": "^1.1.1",
