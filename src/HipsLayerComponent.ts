@@ -53,7 +53,7 @@ export default class HipparcosCatalogLayerComponent extends Vue {
 
     private setLayer() {
         if (location.href.match(/^https:/) && this.baseUrl.match(/^http:/)) {
-            alert('Use https:// HiPS URL not http://')
+            alert('Use HiPS URL with https:// not http://')
         }
         this.globe.addLayer(this.layer = new HipsLayer(this.baseUrl, this.suffix))
         this.setShowGrid()
