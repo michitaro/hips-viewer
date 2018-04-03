@@ -12,7 +12,7 @@ const layers = {
     },
     hips: {
         show: true,
-        baseUrl: '',
+        baseUrl: 'https://alasky.u-strasbg.fr/DSS/DSSColor',
         suffix: 'jpg',
         showGrid: false,
     }

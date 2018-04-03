@@ -1,5 +1,5 @@
 import { Component, Vue, Inject, Prop } from "vue-property-decorator"
-import { HipsRenderer, NoopColorMixer, SimpleImageTextureProvider, Layer, Globe, View, ColorMixer } from "@hscmap/stellar-globe"
+import { HipsRenderer, hipsColorMixer, hipsTextureProvider, Layer, Globe, View } from "@hscmap/stellar-globe"
 import { GlobeComponent } from "./GlobeComponent/script"
 import * as ajax from './ajax'
 import { hipsInformation, Properties } from "./state/hips_information"
@@ -63,7 +63,7 @@ export default class HipparcosCatalogLayerComponent extends Vue {
 }
 
 
-class HybridTextureProvider extends SimpleImageTextureProvider {
+class HybridTextureProvider extends hipsTextureProvider.SimpleImageTextureProvider {
     // constructor(globe: Globe, readonly baseUrl: string, readonly format: string, tileOrder: number, maxTileOrder: number) {
     //     super(globe, baseUrl, format, tileOrder, maxTileOrder)
     // }
@@ -142,7 +142,7 @@ class HipsLayer extends Layer {
 }
 
 
-class GridColorMixer extends ColorMixer {
+class GridColorMixer extends hipsColorMixer.ColorMixer {
     fragmentShaderSource() {
         return `
             uniform sampler2D u_texture1;
